@@ -3,8 +3,8 @@ package day6;
 import java.util.Random;
 
 public class Teacher {
-    String name;
-    String subject;
+    private String name;
+    private String subject;
 
     public Teacher(String name, String subject) {
         this.name = name;
@@ -34,12 +34,11 @@ public class Teacher {
                     break;
             case 4: result = "хорошо";
                     break;
-            case 5: result = "отлично";
-                    break;
-            default: result = "он слишком умный чтобы его оценивать";
+            default: result = "отлично";
+
 
         }
-        System.out.println("Преподаватель " + name + " оценил студента с именем " + student.name +
+        System.out.println("Преподаватель " + name + " оценил студента с именем " + student.getName() +
                " по предмету " + subject + " на оценку " + result + ".");
 
     }

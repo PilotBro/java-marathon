@@ -1,11 +1,11 @@
 package day6;
 
 public class Airplane {
-    String producer;
-    int year;
-    int length;
-    int weight;
-    int fuel = 0;
+    private String producer;
+    private int year;
+    private int length;
+    private int weight;
+    private int fuel = 0;
 
     public void setProducer(String producer) {
         this.producer = producer;

@@ -3,8 +3,8 @@ package day5;
 public class Car {
 
     int year;
-    String color;
-    String model;
+    private String color;
+    private String model;
 
     public int getYear() {
         return year;
