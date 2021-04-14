@@ -34,7 +34,11 @@ public class Player {
         if (countPlayers == 6) {
             System.out.println("На поле нет свободных мест");
         }else if (countPlayers < 6) {
-            System.out.println("Команды неполные. На поле еще есть " + (6 - countPlayers) + " свободных мест");
+            if (countPlayers == 1) {
+                System.out.println("Команды неполные. На поле еще есть " + (6 - countPlayers) + " свободное место");
+            } else {
+                System.out.println("Команды неполные. На поле еще есть " + (6 - countPlayers) + " свободных мест");
+            }
         }
     }
 }
