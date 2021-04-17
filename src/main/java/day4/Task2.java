@@ -23,7 +23,7 @@ public class Task2 {
             if (num < minNumber) {
                 minNumber = num;
             }
-            if (Integer.toString(num).endsWith("0")) {
+            if (num % 10 == 0) {
                 endsWithZero++;
                 sumOfZero += num;
             }

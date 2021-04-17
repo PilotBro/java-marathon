@@ -9,12 +9,13 @@ public class Task2 {
         double b = in.nextDouble();
 
         while (true) {
+            if (b == 0 || a == 0) {
+                break;
+            }
             System.out.println(a / b);
             a = in.nextDouble();
             b = in.nextDouble();
-            if (b == 0) {
-                break;
-            }
+
         }
     }
 }
