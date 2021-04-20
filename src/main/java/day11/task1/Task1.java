@@ -17,19 +17,15 @@ public class Task1 {
         businessProcess(picker2);
         businessProcess(courier2);
 
-        System.out.println(mainWarehouse.getCountPickedOrders());
-        System.out.println(mainWarehouse.getCountDeliveredOrders());
-
-        System.out.println(picker1.getSalary());
-        System.out.println(courier1.getSalary());
+        System.out.println(picker1);
+        System.out.println(courier1);
+        System.out.println(mainWarehouse);
 
         System.out.println();
 
-        System.out.println(secondaryWarehoese.getCountPickedOrders());
-        System.out.println(secondaryWarehoese.getCountDeliveredOrders());
-
-        System.out.println(picker2.getSalary());
-        System.out.println(courier2.getSalary());
+        System.out.println(picker2);
+        System.out.println(courier2);
+        System.out.println(secondaryWarehoese);
 
     }
 

@@ -2,17 +2,14 @@ package day11.task1;
 
 public class Courier implements Worker {
     private int salary;
-    private int costPerDeliveredUnit = 100;
-    private int personalBonus = 50000;
-    private int bonusThresholdLimit = 10000;
-    private int countOfDeliveredUnits;
+    private static final int COST_PER_DELIVERED_UNIT = 100;
+    private static final int PERSONAL_BONUS = 50000;
+    private static final int BONUS_THRESHOLD_UNIT = 10000;
     private boolean isPayed;
     private Warehouse warehouse;
-    private static int countOfCouriers;
 
     public Courier(Warehouse warehouse) {
         this.warehouse = warehouse;
-        countOfCouriers++;
     }
 
     public int getSalary() {
@@ -23,30 +20,25 @@ public class Courier implements Worker {
     }
 
     public void doWork() {
-        salary += costPerDeliveredUnit;
-        warehouse.setCountDeliveredOrders(1);
-        countOfDeliveredUnits++;
+        salary += COST_PER_DELIVERED_UNIT;
+        warehouse.incrementCountDeliveredOrders();
     }
-    public boolean bonus() {
-        if (!isPayed) {
-            if (warehouse.getCountDeliveredOrders() == bonusThresholdLimit && countOfCouriers == 1) {
-                salary += personalBonus;
-                isPayed = true;
-            } else if (countOfCouriers > 1 && countOfDeliveredUnits >= bonusThresholdLimit / countOfCouriers) {
-                salary += personalBonus;
-                isPayed = true;
-            } else {
-                System.out.println("Бонус пока не доступен");
-            }
-        } else {
-            System.out.println("Бонус уже был выплачен");
+    public void bonus() {
+        if (warehouse.getCountDeliveredOrders() < BONUS_THRESHOLD_UNIT) {
+            System.out.println("Бонус пока не доступен");
+            return;
         }
-        return isPayed;
+        if (isPayed) {
+            System.out.println("Бонус уже был выплачен");
+            return;
+        }
+        salary += PERSONAL_BONUS;
+        isPayed = true;
     }
 
     @Override
     public String toString() {
-        return "Заработная плата сотрудника: " + salary +
+        return "Заработная плата сотрудника: " + salary + System.lineSeparator() +
                 "Был ли выплачен бонус: " + isPayed;
     }
 }

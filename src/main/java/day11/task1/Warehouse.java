@@ -11,16 +11,16 @@ public class Warehouse {
         return countDeliveredOrders;
     }
 
-    public void setCountPickedOrders(int countPickedOrders) {
-        this.countPickedOrders += countPickedOrders;
+    public void incrementCountPickedOrders() {
+        countPickedOrders++;
     }
-    public void setCountDeliveredOrders(int countDeliveredOrders) {
-        this.countDeliveredOrders += countDeliveredOrders;
+    public void incrementCountDeliveredOrders() {
+        countDeliveredOrders++;
     }
 
     @Override
     public String toString() {
-        return "Количество собранных товаров: " + countPickedOrders +
-                "\n Количество доставленных товаров: " + countDeliveredOrders;
+        return "Количество собранных товаров: " + countPickedOrders + System.lineSeparator() +
+                "Количество доставленных товаров: " + countDeliveredOrders;
     }
 }

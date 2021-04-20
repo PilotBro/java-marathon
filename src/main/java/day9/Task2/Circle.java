@@ -2,7 +2,6 @@ package day9.Task2;
 
 public class Circle extends Figure{
     private int radius;
-    public final static double PI = Math.PI;
 
     public Circle(int radius, String color){
         super(color);
@@ -11,11 +10,11 @@ public class Circle extends Figure{
 
     @Override
     public double area() {
-        return PI * (radius * radius);
+        return Math.PI * (radius * radius);
     }
 
     @Override
     public double perimeter() {
-        return 2 * PI * radius;
+        return 2 * Math.PI * radius;
     }
 }
