@@ -1,25 +1,26 @@
-package day12.task4;
+package day12.task5;
 
-import java.util.Arrays;
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
 
 public class MusicBand {
     private String name;
     private int year;
-    private List<String> members;
+    private List<MusicArtist> members = new ArrayList<>();
 
-    public MusicBand(String name, int year, List<String> members) {
+    public MusicBand(String name, int year, List<MusicArtist> members) {
         this.name = name;
         this.year = year;
         this.members = members;
     }
-
-    public void addMusicBandMember(String member) {
+    public List<MusicArtist> getMembers() {
+        return members;
+    }
+    public void addMusicBandMember(MusicArtist member) {
         this.members.add(member);
     }
     public void printMembers() {
-        for(String str : members) {
+        for(MusicArtist str : members) {
             System.out.println(str);
         }
     }
@@ -31,12 +32,8 @@ public class MusicBand {
         return year;
     }
 
-    public List<String> getMembers() {
-        return members;
-    }
-
     public static void transferMembers(MusicBand musicBand1, MusicBand musicBand2){
-        for (String str : musicBand1.getMembers()) {
+        for (MusicArtist str : musicBand1.getMembers()) {
             musicBand2.addMusicBandMember(str);
         }
         musicBand1.getMembers().removeAll(musicBand1.getMembers());
@@ -46,7 +43,8 @@ public class MusicBand {
     public String toString() {
         return "MusicBand{" +
                 "name='" + name + '\'' +
-                ", year=" + year +
+                ", year= " + year +
+                ", members= " + members +
                 '}';
     }
 }
