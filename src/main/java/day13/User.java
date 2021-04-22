@@ -29,7 +29,7 @@ public class User {
     }
 
     public boolean isFriend(User user) {
-        return user.subscriptions.contains(username);
+        return this.isSubscribed(user) && user.isSubscribed(this);
     }
 
     public void sendMessage(User user, String text) {
