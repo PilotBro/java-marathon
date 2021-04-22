@@ -10,10 +10,12 @@ public abstract class Hero implements PhysAttack {
 
     @Override
     public void physicalAttack(Hero hero) {
-        hero.setHealth(hero.getHealth() - (physAtt - (int)(physAtt * hero.physDef)));
-        if (hero.getHealth() < 0) {
+        int heroHealthValue = hero.getHealth() - (physAtt - (int)(physAtt * hero.physDef));
+        if (heroHealthValue < 0) {
             hero.setHealth(0);
             System.out.println("The Hero is eaten by hyenas.");
+        } else {
+            hero.setHealth(heroHealthValue);
         }
         System.out.println(hero.toString());
     }

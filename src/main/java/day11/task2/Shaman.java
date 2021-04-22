@@ -14,10 +14,12 @@ public class Shaman extends Hero implements MagicAttack, Healer {
     }
 
     public void magicalAttack(Hero hero) {
-        hero.setHealth(hero.getHealth() - (magicAtt - (int)(magicAtt * hero.getMagicDef())));
-        if (hero.getHealth() < 0) {
+        int heroHealthValue = hero.getHealth() - (magicAtt - (int)(magicAtt * hero.getMagicDef()));
+        if (heroHealthValue < 0) {
             hero.setHealth(0);
             System.out.println("The Hero is eaten by hyenas.");
+        } else {
+            hero.setHealth(heroHealthValue);
         }
         System.out.println(hero.toString());
     }
