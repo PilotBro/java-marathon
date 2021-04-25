@@ -15,6 +15,19 @@ public class Task5 {
 
         MusicBand gringos = new MusicBand("Gringos", 2017, musicArtistFirstList);
         MusicBand fahitos = new MusicBand("Fahitos", 1996, musicArtistSecondList);
+        System.out.println("before");
+        System.out.println("gringos");
+        gringos.printMembers();
+        System.out.println("fahitos");
+        fahitos.printMembers();
+
+        MusicBand.transferMembers(gringos, fahitos);
+        System.out.println("after");
+        System.out.println("gringos");
+        gringos.printMembers();
+        System.out.println("fahitos");
+        fahitos.printMembers();
+        System.out.println(fahitos);
 
     }
 }
